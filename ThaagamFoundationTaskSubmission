@@ -1,0 +1,2713 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>A Custom Song | Personalized Songs & Gifts</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"DM Sans",sans-serif;
+    background:#fffaf8;
+    color:#241c1c;
+    overflow-x:hidden;
+}
+
+button,
+input,
+textarea,
+select{
+    font-family:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+/* =========================
+HEADER
+========================= */
+
+.header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,250,248,.97);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid #eee1dc;
+}
+
+.navbar{
+    max-width:1250px;
+    height:78px;
+    margin:auto;
+    padding:0 25px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-family:"Playfair Display",serif;
+    font-size:25px;
+    font-weight:700;
+    color:#941b3e;
+}
+
+.logo span{
+    color:#222;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:30px;
+    list-style:none;
+}
+
+.nav-links a{
+    font-size:14px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#941b3e;
+}
+
+.nav-button{
+    border:0;
+    background:#941b3e;
+    color:white;
+    padding:13px 21px;
+    border-radius:30px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.nav-button:hover{
+    background:#6f122d;
+    transform:translateY(-2px);
+}
+
+.menu{
+    display:none;
+    font-size:29px;
+    color:#941b3e;
+}
+
+/* =========================
+HERO
+========================= */
+
+.hero{
+    min-height:650px;
+
+    background:
+    radial-gradient(
+        circle at 80% 35%,
+        rgba(187,53,85,.18),
+        transparent 30%
+    ),
+    linear-gradient(
+        115deg,
+        #fff7f4,
+        #ffffff 55%,
+        #f9e9e7
+    );
+
+    display:flex;
+    align-items:center;
+}
+
+.hero-content{
+    width:1250px;
+    margin:auto;
+    padding:75px 25px;
+
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:60px;
+    align-items:center;
+}
+
+.hero-small{
+    color:#9a2141;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:17px;
+}
+
+.hero h1{
+    font-family:"Playfair Display",serif;
+    font-size:64px;
+    line-height:1.05;
+    margin-bottom:23px;
+}
+
+.hero h1 span{
+    color:#9b1c3e;
+}
+
+.hero p{
+    max-width:570px;
+    color:#665c5c;
+    line-height:1.8;
+    font-size:17px;
+    margin-bottom:30px;
+}
+
+.hero-actions{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+}
+
+.primary-btn,
+.secondary-btn{
+    border:0;
+    padding:15px 27px;
+    border-radius:30px;
+    font-size:15px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.primary-btn{
+    background:#941b3e;
+    color:white;
+}
+
+.primary-btn:hover{
+    background:#71132f;
+    transform:translateY(-2px);
+}
+
+.secondary-btn{
+    background:white;
+    color:#941b3e;
+    border:1px solid #d8a5b0;
+}
+
+.secondary-btn:hover{
+    background:#fff0f2;
+}
+
+.hero-image{
+    position:relative;
+}
+
+.hero-card{
+    background:white;
+    padding:14px;
+    border-radius:30px;
+    box-shadow:0 25px 70px rgba(70,30,30,.15);
+    transform:rotate(2deg);
+}
+
+.hero-photo{
+    height:480px;
+    border-radius:22px;
+
+    background:
+    url("https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=900&q=85")
+    center/cover;
+}
+
+.floating-note{
+    position:absolute;
+    bottom:20px;
+    left:-25px;
+
+    background:white;
+    padding:15px 19px;
+
+    border-radius:15px;
+
+    box-shadow:0 12px 30px rgba(40,20,20,.15);
+
+    font-size:13px;
+}
+
+.floating-note strong{
+    display:block;
+    color:#941b3e;
+    font-size:18px;
+}
+
+/* =========================
+COMMON
+========================= */
+
+.section{
+    padding:90px 25px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.section-heading{
+    text-align:center;
+    max-width:700px;
+    margin:0 auto 48px;
+}
+
+.eyebrow{
+    color:#9b1d40;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:12px;
+}
+
+.section-heading h2{
+    font-family:"Playfair Display",serif;
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.section-heading p{
+    color:#716565;
+    line-height:1.7;
+}
+
+/* =========================
+PRODUCTS
+========================= */
+
+.products{
+    background:white;
+}
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
+}
+
+.product-card{
+    background:white;
+    border:1px solid #eee3df;
+    border-radius:20px;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.product-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 18px 35px rgba(60,30,30,.12);
+}
+
+.product-image{
+    height:220px;
+    overflow:hidden;
+    background:#f3e5e1;
+}
+
+.product-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.4s;
+}
+
+.product-card:hover img{
+    transform:scale(1.06);
+}
+
+.product-info{
+    padding:17px;
+}
+
+.product-info h3{
+    font-size:16px;
+    margin-bottom:9px;
+}
+
+.price{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    margin-bottom:15px;
+}
+
+.old-price{
+    color:#999;
+    text-decoration:line-through;
+    font-size:13px;
+}
+
+.new-price{
+    color:#941b3e;
+    font-weight:700;
+}
+
+.buy-btn{
+    width:100%;
+    border:0;
+    padding:11px;
+    border-radius:25px;
+    background:#941b3e;
+    color:white;
+    font-weight:700;
+    transition:.3s;
+}
+
+.buy-btn:hover{
+    background:#6f122d;
+}
+
+/* =========================
+LOVE STORY
+========================= */
+
+.love{
+    background:#fff6f4;
+}
+
+.love-intro{
+    max-width:680px;
+    margin:-20px auto 40px;
+    text-align:center;
+    color:#716565;
+    line-height:1.8;
+}
+
+.story-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.story-card{
+    height:340px;
+    border-radius:22px;
+    overflow:hidden;
+}
+
+.story-card:nth-child(1){
+    grid-row:span 2;
+    height:698px;
+}
+
+.story-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.4s;
+}
+
+.story-card:hover img{
+    transform:scale(1.06);
+}
+
+/* =========================
+SONGS
+========================= */
+
+.songs{
+    background:#21191b;
+    color:white;
+}
+
+.songs .section-heading p{
+    color:#cbbfc0;
+}
+
+.song-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:20px;
+}
+
+.song-card{
+    background:#302528;
+    border:1px solid #45373a;
+    border-radius:18px;
+    padding:12px;
+}
+
+.song-cover{
+    height:200px;
+    border-radius:13px;
+    overflow:hidden;
+    margin-bottom:14px;
+}
+
+.song-cover img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.song-title{
+    font-weight:700;
+    margin-bottom:5px;
+}
+
+.song-language{
+    color:#baaeb0;
+    font-size:13px;
+    margin-bottom:12px;
+}
+
+.play-btn{
+    width:100%;
+    padding:10px;
+    border:0;
+    border-radius:20px;
+    background:#941b3e;
+    color:white;
+    font-weight:700;
+}
+
+.play-btn:hover{
+    background:#b32a50;
+}
+
+/* =========================
+ABOUT
+========================= */
+
+.about{
+    background:white;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.about-image{
+    height:530px;
+    border-radius:28px;
+
+    background:
+    url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1000&q=85")
+    center/cover;
+}
+
+.about-content h2{
+    font-family:"Playfair Display",serif;
+    font-size:45px;
+    line-height:1.15;
+    margin-bottom:20px;
+}
+
+.about-content p{
+    color:#6f6464;
+    line-height:1.85;
+    margin-bottom:18px;
+}
+
+.feature{
+    display:flex;
+    gap:14px;
+    margin:20px 0;
+}
+
+.feature-icon{
+    width:45px;
+    height:45px;
+    min-width:45px;
+    border-radius:50%;
+    background:#fae2e5;
+    color:#941b3e;
+
+    display:grid;
+    place-items:center;
+    font-size:20px;
+}
+
+/* =========================
+QR
+========================= */
+
+.qr-section{
+    background:#fff4f1;
+}
+
+.qr-box{
+    max-width:950px;
+    margin:auto;
+
+    background:white;
+    border-radius:30px;
+
+    padding:40px;
+
+    display:grid;
+    grid-template-columns:280px 1fr;
+    align-items:center;
+    gap:50px;
+
+    box-shadow:0 15px 45px rgba(80,30,30,.08);
+}
+
+.qr{
+    width:240px;
+    height:240px;
+    margin:auto;
+}
+
+.qr img{
+    width:100%;
+    height:100%;
+}
+
+.qr-text h2{
+    font-family:"Playfair Display",serif;
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.qr-text p{
+    color:#706565;
+    line-height:1.8;
+}
+
+/* =========================
+REVIEWS
+========================= */
+
+.testimonials{
+    background:white;
+}
+
+.review-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.review{
+    padding:27px;
+    border:1px solid #eee1de;
+    border-radius:20px;
+}
+
+.stars{
+    color:#e5a31b;
+    margin-bottom:14px;
+}
+
+.review p{
+    color:#6d6363;
+    line-height:1.75;
+    margin-bottom:20px;
+}
+
+/* =========================
+FAQ
+========================= */
+
+.faq{
+    background:#fff7f5;
+}
+
+.faq-container{
+    max-width:800px;
+    margin:auto;
+}
+
+.faq-item{
+    border-bottom:1px solid #e2d5d1;
+}
+
+.faq-question{
+    width:100%;
+    padding:21px 5px;
+    background:none;
+    border:0;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    font-size:16px;
+    font-weight:700;
+    text-align:left;
+}
+
+.faq-question span{
+    font-size:23px;
+    color:#941b3e;
+}
+
+.faq-answer{
+    max-height:0;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.faq-answer p{
+    padding:0 5px 20px;
+    color:#716666;
+    line-height:1.7;
+}
+
+.faq-item.active .faq-answer{
+    max-height:200px;
+}
+
+/* =========================
+FOOTER
+========================= */
+
+.footer{
+    background:#20191b;
+    color:white;
+    padding:60px 25px 25px;
+}
+
+.footer-grid{
+    max-width:1200px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:1.5fr 1fr 1fr 1.3fr;
+    gap:40px;
+}
+
+.footer-logo{
+    font-family:"Playfair Display",serif;
+    font-size:27px;
+    margin-bottom:15px;
+}
+
+.footer h3{
+    margin-bottom:15px;
+}
+
+.footer p,
+.footer a{
+    color:#bdb2b3;
+    font-size:14px;
+    line-height:1.9;
+}
+
+.footer a:hover{
+    color:white;
+}
+
+.footer-bottom{
+    max-width:1200px;
+    margin:40px auto 0;
+    padding-top:20px;
+    border-top:1px solid #3b3032;
+    text-align:center;
+    color:#8e8384;
+}
+
+/* =========================
+WHATSAPP
+========================= */
+
+.whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+
+    width:56px;
+    height:56px;
+
+    background:#20b95c;
+    color:white;
+
+    border-radius:50%;
+
+    display:grid;
+    place-items:center;
+
+    font-size:25px;
+
+    z-index:900;
+}
+
+/* =========================
+MODAL
+========================= */
+
+.modal{
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,.65);
+
+    display:none;
+    align-items:center;
+    justify-content:center;
+
+    z-index:2000;
+
+    padding:20px;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-box{
+    width:100%;
+    max-width:520px;
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:30px;
+
+    position:relative;
+
+    animation:modalOpen .25s ease;
+}
+
+@keyframes modalOpen{
+
+    from{
+        transform:translateY(30px);
+        opacity:0;
+    }
+
+    to{
+        transform:translateY(0);
+        opacity:1;
+    }
+
+}
+
+.close-modal{
+    position:absolute;
+    right:20px;
+    top:15px;
+
+    border:0;
+    background:none;
+
+    font-size:28px;
+    color:#777;
+}
+
+.modal-box h2{
+    font-family:"Playfair Display",serif;
+    font-size:32px;
+    margin-bottom:8px;
+}
+
+.modal-subtitle{
+    color:#777;
+    margin-bottom:22px;
+}
+
+.form-group{
+    margin-bottom:15px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:6px;
+    font-weight:600;
+    font-size:14px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select{
+    width:100%;
+
+    padding:12px;
+
+    border:1px solid #ddd;
+
+    border-radius:10px;
+
+    outline:none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus{
+    border-color:#941b3e;
+}
+
+.form-group textarea{
+    height:90px;
+    resize:none;
+}
+
+.submit-order{
+    width:100%;
+    padding:14px;
+
+    border:0;
+    border-radius:25px;
+
+    background:#941b3e;
+    color:white;
+
+    font-weight:700;
+    font-size:15px;
+
+    margin-top:5px;
+}
+
+.submit-order:hover{
+    background:#70132e;
+}
+
+.success-message{
+    display:none;
+    margin-top:15px;
+    padding:12px;
+    border-radius:10px;
+    background:#e8f8ed;
+    color:#19733a;
+    font-size:14px;
+}
+
+/* =========================
+RESPONSIVE
+========================= */
+
+@media(max-width:1100px){
+
+    .hero h1{
+        font-size:52px;
+    }
+
+    .product-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .song-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+}
+
+@media(max-width:850px){
+
+    .navbar{
+        height:70px;
+    }
+
+    .nav-button{
+        display:none;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .nav-links{
+        position:absolute;
+        left:0;
+        top:70px;
+
+        width:100%;
+
+        background:white;
+
+        display:none;
+
+        flex-direction:column;
+
+        gap:0;
+
+        padding:10px 20px;
+
+        border-bottom:1px solid #eee;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .nav-links li{
+        width:100%;
+    }
+
+    .nav-links a{
+        display:block;
+        padding:14px 0;
+    }
+
+    .hero-content{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .hero p{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .hero-actions{
+        justify-content:center;
+    }
+
+    .product-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .story-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .story-card:nth-child(1){
+        grid-row:auto;
+        height:340px;
+    }
+
+    .song-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    .qr-box{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .review-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:550px){
+
+    .section{
+        padding:65px 17px;
+    }
+
+    .navbar{
+        padding:0 17px;
+    }
+
+    .hero-content{
+        padding:55px 17px;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .hero-photo{
+        height:370px;
+    }
+
+    .section-heading h2{
+        font-size:34px;
+    }
+
+    .product-grid{
+        grid-template-columns:1fr 1fr;
+        gap:12px;
+    }
+
+    .product-image{
+        height:165px;
+    }
+
+    .product-info{
+        padding:12px;
+    }
+
+    .product-info h3{
+        font-size:14px;
+    }
+
+    .story-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .story-card,
+    .story-card:nth-child(1){
+        height:250px;
+    }
+
+    .song-grid{
+        display:flex;
+        overflow-x:auto;
+        scroll-snap-type:x mandatory;
+    }
+
+    .song-card{
+        min-width:240px;
+        scroll-snap-align:start;
+    }
+
+    .about-content h2{
+        font-size:35px;
+    }
+
+    .about-image{
+        height:350px;
+    }
+
+    .qr-box{
+        padding:25px 18px;
+    }
+
+    .qr{
+        width:210px;
+        height:210px;
+    }
+
+    .review-grid{
+        display:flex;
+        overflow-x:auto;
+        scroll-snap-type:x mandatory;
+    }
+
+    .review{
+        min-width:285px;
+        scroll-snap-align:start;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .modal-box{
+        padding:25px 20px;
+    }
+}
+
+@media(max-width:380px){
+
+    .hero h1{
+        font-size:35px;
+    }
+
+    .product-grid{
+        grid-template-columns:1fr;
+    }
+
+    .product-image{
+        height:220px;
+    }
+
+    .story-grid{
+        grid-template-columns:1fr;
+    }
+
+    .story-card,
+    .story-card:nth-child(1){
+        height:330px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+HEADER
+========================= -->
+
+<header class="header">
+
+<nav class="navbar">
+
+<a href="#home" class="logo">
+A Custom <span>Song</span>
+</a>
+
+<ul class="nav-links" id="navLinks">
+
+<li><a href="#home">Home</a></li>
+
+<li><a href="#products">Products</a></li>
+
+<li><a href="#story">Love Story</a></li>
+
+<li><a href="#songs">Songs</a></li>
+
+<li><a href="#about">About</a></li>
+
+<li><a href="#reviews">Reviews</a></li>
+
+<li><a href="#faq">FAQ</a></li>
+
+</ul>
+
+<button class="nav-button" id="navCreateBtn">
+Create Your Song
+</button>
+
+<div class="menu" id="menu">
+☰
+</div>
+
+</nav>
+
+</header>
+
+
+<!-- =========================
+HERO
+========================= -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<div>
+
+<div class="hero-small">
+Personalized • Emotional • Unique
+</div>
+
+<h1>
+Turn Your Story Into
+<span>A Beautiful Song</span>
+</h1>
+
+<p>
+Create a personalized song from your memories,
+messages and emotions. A meaningful gift created
+especially for someone special.
+</p>
+
+<div class="hero-actions">
+
+<button class="primary-btn" id="heroCreateBtn">
+Create Your Song →
+</button>
+
+<button class="secondary-btn" id="sampleBtn">
+Listen to Samples
+</button>
+
+</div>
+
+</div>
+
+
+<div class="hero-image">
+
+<div class="hero-card">
+
+<div class="hero-photo"></div>
+
+</div>
+
+<div class="floating-note">
+
+<strong>♪ Your Story</strong>
+
+Made into music
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+PRODUCTS
+========================= -->
+
+<section class="section products" id="products">
+
+<div class="container">
+
+<div class="section-heading">
+
+<div class="eyebrow">
+Products
+</div>
+
+<h2>
+Our Recent Products
+</h2>
+
+<p>
+Choose a personalized product and make
+your special memories unforgettable.
+</p>
+
+</div>
+
+
+<div class="product-grid" id="productGrid"></div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+LOVE STORY
+========================= -->
+
+<section class="section love" id="story">
+
+<div class="container">
+
+<div class="section-heading">
+
+<div class="eyebrow">
+Our Love Story
+</div>
+
+<h2>
+Moments Worth Remembering
+</h2>
+
+</div>
+
+<p class="love-intro">
+
+Every moment with someone special becomes
+a beautiful memory. Explore moments filled
+with love, laughter and happiness.
+
+</p>
+
+
+<div class="story-grid">
+
+<div class="story-card">
+<img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=85">
+</div>
+
+<div class="story-card">
+<img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=85">
+</div>
+
+<div class="story-card">
+<img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=800&q=85">
+</div>
+
+<div class="story-card">
+<img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=800&q=85">
+</div>
+
+<div class="story-card">
+<img src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=800&q=85">
+</div>
+
+<div class="story-card">
+<img src="https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?auto=format&fit=crop&w=800&q=85">
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+SONGS
+========================= -->
+
+<section class="section songs" id="songs">
+
+<div class="container">
+
+<div class="section-heading">
+
+<div class="eyebrow">
+Recent Songs
+</div>
+
+<h2>
+Hear the Magic
+</h2>
+
+<p>
+Listen to sample personalized songs.
+</p>
+
+</div>
+
+
+<div class="song-grid">
+
+<div class="song-card">
+
+<div class="song-cover">
+
+<img src="https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?auto=format&fit=crop&w=600&q=80">
+
+</div>
+
+<div class="song-title">
+Tamil Love Song
+</div>
+
+<div class="song-language">
+Tamil
+</div>
+
+<button class="play-btn"
+data-audio="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">
+
+▶ Play Sample
+
+</button>
+
+</div>
+
+
+<div class="song-card">
+
+<div class="song-cover">
+
+<img src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?auto=format&fit=crop&w=600&q=80">
+
+</div>
+
+<div class="song-title">
+Forever With You
+</div>
+
+<div class="song-language">
+English
+</div>
+
+<button class="play-btn"
+data-audio="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3">
+
+▶ Play Sample
+
+</button>
+
+</div>
+
+
+<div class="song-card">
+
+<div class="song-cover">
+
+<img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=600&q=80">
+
+</div>
+
+<div class="song-title">
+Dil Se
+</div>
+
+<div class="song-language">
+Hindi
+</div>
+
+<button class="play-btn"
+data-audio="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3">
+
+▶ Play Sample
+
+</button>
+
+</div>
+
+
+<div class="song-card">
+
+<div class="song-cover">
+
+<img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=600&q=80">
+
+</div>
+
+<div class="song-title">
+Naa Prema
+</div>
+
+<div class="song-language">
+Telugu
+</div>
+
+<button class="play-btn"
+data-audio="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3">
+
+▶ Play Sample
+
+</button>
+
+</div>
+
+
+<div class="song-card">
+
+<div class="song-cover">
+
+<img src="https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?auto=format&fit=crop&w=600&q=80">
+
+</div>
+
+<div class="song-title">
+Nanna Hudugi
+</div>
+
+<div class="song-language">
+Kannada
+</div>
+
+<button class="play-btn"
+data-audio="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3">
+
+▶ Play Sample
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+ABOUT
+========================= -->
+
+<section class="section about" id="about">
+
+<div class="container about-grid">
+
+<div class="about-image"></div>
+
+
+<div class="about-content">
+
+<div class="eyebrow">
+About Us
+</div>
+
+<h2>
+Customized Musical Experiences
+</h2>
+
+<p>
+At A Custom Song, we create personalized
+songs based on your memories, messages
+and emotions.
+</p>
+
+<p>
+Our goal is to turn your special story
+into a meaningful musical experience.
+</p>
+
+
+<div class="feature">
+
+<div class="feature-icon">
+♫
+</div>
+
+<div>
+
+<strong>
+Personalized Music
+</strong>
+
+<p>
+Every song is created around your
+unique story.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">
+♥
+</div>
+
+<div>
+
+<strong>
+Made With Emotion
+</strong>
+
+<p>
+A meaningful gift for someone special.
+</p>
+
+</div>
+
+</div>
+
+
+<button class="primary-btn" id="aboutBtn">
+Create Your Song →
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+QR
+========================= -->
+
+<section class="section qr-section">
+
+<div class="qr-box">
+
+<div class="qr">
+
+<img
+src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://acustomsong.com/"
+alt="QR Code">
+
+</div>
+
+
+<div class="qr-text">
+
+<div class="eyebrow">
+Scan
+</div>
+
+<h2>
+Scan to Play!
+</h2>
+
+<p>
+Scan the QR code to visit A Custom Song
+and explore personalized songs and gifts.
+</p>
+
+<br>
+
+<button class="primary-btn" id="visitBtn">
+Visit Website →
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+REVIEWS
+========================= -->
+
+<section class="section testimonials" id="reviews">
+
+<div class="container">
+
+<div class="section-heading">
+
+<div class="eyebrow">
+Client Feedback
+</div>
+
+<h2>
+What Our Clients Say
+</h2>
+
+</div>
+
+
+<div class="review-grid">
+
+<div class="review">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+The personalized gift was beautiful.
+The quality and presentation were amazing.
+</p>
+
+<strong>
+Rahul M
+</strong>
+
+</div>
+
+
+<div class="review">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+The song was emotional and exactly what
+we wanted. Everyone loved it.
+</p>
+
+<strong>
+Sneha R
+</strong>
+
+</div>
+
+
+<div class="review">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+A very unique and creative gift.
+Highly memorable.
+</p>
+
+<strong>
+Vignesh K
+</strong>
+
+</div>
+
+
+<div class="review">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+The animation and music were beautiful.
+It made our special day memorable.
+</p>
+
+<strong>
+Divya S
+</strong>
+
+</div>
+
+
+<div class="review">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+The digital art was very beautiful
+and creative.
+</p>
+
+<strong>
+Arun P
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+FAQ
+========================= -->
+
+<section class="section faq" id="faq">
+
+<div class="container">
+
+<div class="section-heading">
+
+<div class="eyebrow">
+FAQ
+</div>
+
+<h2>
+Frequently Asked Questions
+</h2>
+
+</div>
+
+
+<div class="faq-container">
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+What makes your gifts unique?
+
+<span>+</span>
+
+</button>
+
+<div class="faq-answer">
+
+<p>
+Our products are personalized around
+your story, memories and emotions.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+Can I create my own song?
+
+<span>+</span>
+
+</button>
+
+<div class="faq-answer">
+
+<p>
+Yes. Click Create Your Song and submit
+your details through the form.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+Can I choose the language?
+
+<span>+</span>
+
+</button>
+
+<div class="faq-answer">
+
+<p>
+You can specify your preferred language
+when submitting your request.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+Can I order for a special occasion?
+
+<span>+</span>
+
+</button>
+
+<div class="faq-answer">
+
+<p>
+Yes. Personalized gifts can be created
+for birthdays, anniversaries and other
+special occasions.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+How can I contact you?
+
+<span>+</span>
+
+</button>
+
+<div class="faq-answer">
+
+<p>
+You can contact us through WhatsApp
+using the green button on the page.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+FOOTER
+========================= -->
+
+<footer class="footer">
+
+<div class="footer-grid">
+
+
+<div>
+
+<div class="footer-logo">
+A Custom Song
+</div>
+
+<p>
+Personalized songs and meaningful gifts
+created from your memories and emotions.
+</p>
+
+</div>
+
+
+<div>
+
+<h3>
+Services
+</h3>
+
+<p>
+<a href="#products">
+Products
+</a>
+</p>
+
+<p>
+<a href="#songs">
+Songs
+</a>
+</p>
+
+<p>
+<a href="#about">
+About Us
+</a>
+</p>
+
+</div>
+
+
+<div>
+
+<h3>
+Quick Links
+</h3>
+
+<p>
+<a href="#home">
+Home
+</a>
+</p>
+
+<p>
+<a href="#reviews">
+Reviews
+</a>
+</p>
+
+<p>
+<a href="#faq">
+FAQ
+</a>
+</p>
+
+</div>
+
+
+<div>
+
+<h3>
+Contact
+</h3>
+
+<p>
+9169695959
+</p>
+
+<p>
+support@acustomsong.com
+</p>
+
+<p>
+Chennai, India
+</p>
+
+</div>
+
+
+</div>
+
+
+<div class="footer-bottom">
+
+© 2026 A Custom Song. All Rights Reserved.
+
+</div>
+
+</footer>
+
+
+<!-- =========================
+WHATSAPP
+========================= -->
+
+<a
+class="whatsapp"
+href="https://wa.me/919169695959"
+target="_blank"
+title="Chat on WhatsApp">
+
+☎
+
+</a>
+
+
+<!-- =========================
+ORDER MODAL
+========================= -->
+
+<div class="modal" id="orderModal">
+
+<div class="modal-box">
+
+<button class="close-modal" id="closeModal">
+×
+</button>
+
+
+<h2>
+Create Your Song
+</h2>
+
+<p class="modal-subtitle">
+Tell us about your personalized gift.
+</p>
+
+
+<form id="orderForm">
+
+
+<div class="form-group">
+
+<label>
+Your Name
+</label>
+
+<input
+type="text"
+id="customerName"
+placeholder="Enter your name"
+required>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Email
+</label>
+
+<input
+type="email"
+id="customerEmail"
+placeholder="Enter your email"
+required>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Choose Product
+</label>
+
+<select id="productSelect" required>
+
+<option value="">
+Select a product
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Your Message / Story
+</label>
+
+<textarea
+id="customerMessage"
+placeholder="Tell us about your story..."
+required></textarea>
+
+</div>
+
+
+<button
+type="submit"
+class="submit-order">
+
+Submit Request
+
+</button>
+
+
+<div
+class="success-message"
+id="successMessage">
+
+✓ Request submitted successfully!
+We will contact you soon.
+
+</div>
+
+
+</form>
+
+</div>
+
+</div>
+
+
+<script>
+
+/* ==========================================
+PRODUCT DATA
+========================================== */
+
+const products = [
+
+{
+name:"AI Lipsync",
+old:"₹800",
+price:"₹500",
+image:"https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=700&q=80"
+},
+
+{
+name:"Heaven Video",
+old:"₹5000",
+price:"₹3000",
+image:"https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=700&q=80"
+},
+
+{
+name:"AR Frame",
+old:"₹499",
+price:"₹299",
+image:"https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=700&q=80"
+},
+
+{
+name:"Animation Video",
+old:"₹3800",
+price:"₹3000",
+image:"https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=700&q=80"
+},
+
+{
+name:"Photo to AI Video",
+old:"₹1800",
+price:"₹1200",
+image:"https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=700&q=80"
+},
+
+{
+name:"AI PhotoShoot",
+old:"₹1000",
+price:"₹500",
+image:"https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=700&q=80"
+},
+
+{
+name:"Get a Song",
+old:"₹1000",
+price:"₹500",
+image:"https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=700&q=80"
+},
+
+{
+name:"Digital Art",
+old:"₹1500",
+price:"₹1000",
+image:"https://images.unsplash.com/photo-1561214115-f2f134cc4912?auto=format&fit=crop&w=700&q=80"
+},
+
+{
+name:"Digital Merge",
+old:"₹1500",
+price:"₹1000",
+image:"https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=700&q=80"
+},
+
+{
+name:"E-Invitation",
+old:"₹500",
+price:"₹250",
+image:"https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=700&q=80"
+},
+
+{
+name:"Acrylic Frame",
+old:"₹800",
+price:"₹549",
+image:"https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=700&q=80"
+}
+
+];
+
+
+/* ==========================================
+ELEMENTS
+========================================== */
+
+const productGrid =
+document.getElementById("productGrid");
+
+const productSelect =
+document.getElementById("productSelect");
+
+const orderModal =
+document.getElementById("orderModal");
+
+const navLinks =
+document.getElementById("navLinks");
+
+
+/* ==========================================
+CREATE PRODUCT CARDS
+========================================== */
+
+products.forEach((product,index)=>{
+
+const card = document.createElement("div");
+
+card.className = "product-card";
+
+
+card.innerHTML = `
+
+<div class="product-image">
+
+<img
+src="${product.image}"
+alt="${product.name}"
+loading="lazy">
+
+</div>
+
+<div class="product-info">
+
+<h3>
+${product.name}
+</h3>
+
+<div class="price">
+
+<span class="old-price">
+${product.old}
+</span>
+
+<span class="new-price">
+${product.price}
+</span>
+
+</div>
+
+<button
+class="buy-btn"
+data-index="${index}">
+
+Create / Order
+
+</button>
+
+</div>
+
+`;
+
+
+productGrid.appendChild(card);
+
+
+/* ADD TO SELECT */
+
+const option =
+document.createElement("option");
+
+option.value = product.name;
+
+option.textContent =
+`${product.name} - ${product.price}`;
+
+productSelect.appendChild(option);
+
+});
+
+
+/* ==========================================
+OPEN MODAL
+========================================== */
+
+function openModal(productName=""){
+
+orderModal.classList.add("show");
+
+document.body.style.overflow="hidden";
+
+if(productName){
+
+productSelect.value =
+productName;
+
+}
+
+}
+
+
+/* ==========================================
+CLOSE MODAL
+========================================== */
+
+function closeModal(){
+
+orderModal.classList.remove("show");
+
+document.body.style.overflow="";
+
+}
+
+
+/* ==========================================
+ALL CREATE BUTTONS
+========================================== */
+
+document.getElementById("navCreateBtn")
+.addEventListener("click",()=>{
+
+openModal();
+
+});
+
+
+document.getElementById("heroCreateBtn")
+.addEventListener("click",()=>{
+
+openModal();
+
+});
+
+
+document.getElementById("aboutBtn")
+.addEventListener("click",()=>{
+
+openModal();
+
+});
+
+
+/* ==========================================
+PRODUCT BUTTONS
+========================================== */
+
+document.addEventListener("click",(event)=>{
+
+if(event.target.classList.contains("buy-btn")){
+
+const index =
+event.target.dataset.index;
+
+const product =
+products[index];
+
+openModal(product.name);
+
+}
+
+});
+
+
+/* ==========================================
+CLOSE MODAL
+========================================== */
+
+document.getElementById("closeModal")
+.addEventListener("click",closeModal);
+
+
+/* ==========================================
+CLICK OUTSIDE MODAL
+========================================== */
+
+orderModal.addEventListener("click",(event)=>{
+
+if(event.target === orderModal){
+
+closeModal();
+
+}
+
+});
+
+
+/* ==========================================
+ESCAPE KEY
+========================================== */
+
+document.addEventListener("keydown",(event)=>{
+
+if(event.key === "Escape"){
+
+closeModal();
+
+}
+
+});
+
+
+/* ==========================================
+MOBILE MENU
+========================================== */
+
+document.getElementById("menu")
+.addEventListener("click",()=>{
+
+navLinks.classList.toggle("active");
+
+});
+
+
+/* ==========================================
+CLOSE MOBILE MENU AFTER CLICK
+========================================== */
+
+document.querySelectorAll(".nav-links a")
+.forEach(link=>{
+
+link.addEventListener("click",()=>{
+
+navLinks.classList.remove("active");
+
+});
+
+});
+
+
+/* ==========================================
+SAMPLE BUTTON
+========================================== */
+
+document.getElementById("sampleBtn")
+.addEventListener("click",()=>{
+
+document.getElementById("songs")
+.scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+});
+
+
+/* ==========================================
+VISIT WEBSITE BUTTON
+========================================== */
+
+document.getElementById("visitBtn")
+.addEventListener("click",()=>{
+
+window.open(
+"https://acustomsong.com/",
+"_blank"
+);
+
+});
+
+
+/* ==========================================
+SONG PLAYER
+========================================== */
+
+let currentAudio = null;
+let currentButton = null;
+
+
+document.querySelectorAll(".play-btn")
+.forEach(button=>{
+
+button.addEventListener("click",()=>{
+
+const audioUrl =
+button.dataset.audio;
+
+
+/* STOP CURRENT */
+
+if(currentAudio){
+
+currentAudio.pause();
+
+}
+
+
+/* SAME BUTTON */
+
+if(currentButton === button){
+
+button.textContent =
+"▶ Play Sample";
+
+currentAudio = null;
+currentButton = null;
+
+return;
+
+}
+
+
+/* CREATE AUDIO */
+
+const audio =
+new Audio(audioUrl);
+
+audio.play()
+.catch(()=>{
+
+alert(
+"Sample audio could not be played. Please check your internet connection."
+);
+
+});
+
+
+button.textContent =
+"❚❚ Playing...";
+
+
+currentAudio = audio;
+currentButton = button;
+
+
+/* WHEN FINISHED */
+
+audio.addEventListener("ended",()=>{
+
+button.textContent =
+"▶ Play Sample";
+
+currentAudio = null;
+currentButton = null;
+
+});
+
+});
+
+});
+
+
+/* ==========================================
+FAQ
+========================================== */
+
+document.querySelectorAll(".faq-question")
+.forEach(button=>{
+
+button.addEventListener("click",()=>{
+
+const item =
+button.parentElement;
+
+const isActive =
+item.classList.contains("active");
+
+
+document.querySelectorAll(".faq-item")
+.forEach(other=>{
+
+other.classList.remove("active");
+
+const span =
+other.querySelector(".faq-question span");
+
+span.textContent="+";
+
+});
+
+
+if(!isActive){
+
+item.classList.add("active");
+
+button.querySelector("span")
+.textContent="−";
+
+}
+
+});
+
+});
+
+
+/* ==========================================
+FORM SUBMISSION
+========================================== */
+
+document.getElementById("orderForm")
+.addEventListener("submit",(event)=>{
+
+event.preventDefault();
+
+
+const name =
+document.getElementById("customerName").value.trim();
+
+const email =
+document.getElementById("customerEmail").value.trim();
+
+const product =
+document.getElementById("productSelect").value;
+
+const message =
+document.getElementById("customerMessage").value.trim();
+
+
+if(!name || !email || !product || !message){
+
+alert(
+"Please fill all fields before submitting."
+);
+
+return;
+
+}
+
+
+/* SUCCESS */
+
+const success =
+document.getElementById("successMessage");
+
+success.style.display="block";
+
+
+/* RESET */
+
+document.getElementById("orderForm")
+.reset();
+
+
+/* HIDE SUCCESS AFTER 4 SEC */
+
+setTimeout(()=>{
+
+success.style.display="none";
+
+closeModal();
+
+},4000);
+
+});
+
+
+/* ==========================================
+IMAGE FALLBACK
+========================================== */
+
+document.addEventListener(
+"error",
+(event)=>{
+
+if(event.target.tagName === "IMG"){
+
+event.target.style.background =
+"linear-gradient(135deg,#ead0d0,#f8e7e3)";
+
+}
+
+},
+true
+);
+
+</script>
+
+</body>
+</html>
+
