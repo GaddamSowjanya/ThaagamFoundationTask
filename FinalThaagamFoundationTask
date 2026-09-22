@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A Custom Song - Personalized songs and meaningful gifts">
+<title>A Custom Song | Personalized Gifts</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --purple:#9a25d7;
+  --purple-dark:#7614aa;
+  --pink:#d82bb9;
+  --ink:#19131d;
+  --muted:#716975;
+  --soft:#fbf6ff;
+  --line:#eadff0;
+  --white:#fff;
+  --shadow:0 14px 40px rgba(71,20,94,.10);
+  --radius:20px;
+  --container:1200px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"DM Sans",Arial,sans-serif;
+  color:var(--ink);
+  background:#fff;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+button{font:inherit}
+.container{width:min(var(--container),calc(100% - 40px));margin:auto}
+.section{padding:82px 0}
+.section-tag{
+  color:var(--purple);
+  font-size:15px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:1.7px;
+  text-align:center;
+  margin-bottom:10px;
+}
+.section-title{
+  font-family:"Playfair Display",Georgia,serif;
+  font-size:42px;
+  line-height:1.15;
+  text-align:center;
+  margin-bottom:15px;
+}
+.section-copy{
+  max-width:760px;
+  margin:0 auto;
+  color:var(--muted);
+  text-align:center;
+  line-height:1.8;
+}
+
+/* Header */
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(255,255,255,.97);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(0,0,0,.05);
+}
+.nav{
+  min-height:82px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:30px;
+}
+.brand img{width:205px;height:auto}
+.nav-list{
+  list-style:none;
+  display:flex;
+  align-items:center;
+  gap:31px;
+}
+.nav-list a{
+  font-size:14px;
+  font-weight:600;
+  color:#332d36;
+  transition:.2s;
+}
+.nav-list a:hover{color:var(--purple)}
+.nav-cta{
+  color:#fff!important;
+  background:linear-gradient(135deg,var(--purple),var(--pink));
+  padding:12px 23px;
+  border-radius:999px;
+  box-shadow:0 8px 22px rgba(154,37,215,.22);
+}
+.menu{
+  display:none;
+  border:0;
+  background:transparent;
+  width:44px;
+  height:44px;
+  font-size:27px;
+  cursor:pointer;
+}
+
+/* Hero */
+.hero{
+  background:#f1dfff;
+  overflow:hidden;
+}
+.hero img{
+  width:100%;
+  height:auto;
+  min-height:420px;
+  max-height:730px;
+  object-fit:cover;
+  object-position:center;
+}
+
+/* Products */
+.products{background:#fff}
+.product-grid{
+  margin-top:42px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:22px;
+}
+.product-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:0 7px 25px rgba(42,16,53,.06);
+  transition:transform .25s,box-shadow .25s;
+}
+.product-card:hover{
+  transform:translateY(-6px);
+  box-shadow:var(--shadow);
+}
+.product-visual{
+  height:190px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+.product-visual::before{
+  content:"";
+  position:absolute;
+  width:170px;height:170px;
+  border-radius:50%;
+  background:rgba(255,255,255,.24);
+  top:-55px;right:-45px;
+}
+.product-visual::after{
+  content:"";
+  position:absolute;
+  width:120px;height:120px;
+  border-radius:50%;
+  background:rgba(255,255,255,.18);
+  bottom:-55px;left:-35px;
+}
+.visual-icon{
+  position:relative;
+  z-index:1;
+  width:76px;height:76px;
+  border-radius:24px;
+  background:rgba(255,255,255,.92);
+  display:grid;
+  place-items:center;
+  font-size:34px;
+  box-shadow:0 12px 28px rgba(80,20,100,.12);
+}
+.v1{background:linear-gradient(135deg,#f9b8e9,#b88cff)}
+.v2{background:linear-gradient(135deg,#d8b4ff,#ffb8cf)}
+.v3{background:linear-gradient(135deg,#a6d9ff,#d6a9ff)}
+.v4{background:linear-gradient(135deg,#ffc0df,#b9a7ff)}
+.v5{background:linear-gradient(135deg,#b6f0e1,#c9b0ff)}
+.v6{background:linear-gradient(135deg,#ffe0a9,#f8b1dc)}
+.v7{background:linear-gradient(135deg,#c6b6ff,#f7b1d6)}
+.v8{background:linear-gradient(135deg,#d7c2ff,#a9e6ff)}
+.v9{background:linear-gradient(135deg,#ffbfd2,#d6b5ff)}
+.v10{background:linear-gradient(135deg,#ffe2ad,#f8b5e4)}
+.v11{background:linear-gradient(135deg,#b8e7ff,#d8b2ff)}
+
+.product-body{padding:19px 19px 21px}
+.product-body h3{
+  font-size:17px;
+  line-height:1.35;
+  min-height:47px;
+}
+.price{
+  margin-top:11px;
+  display:flex;
+  align-items:center;
+  gap:9px;
+}
+.old{color:#a9a2aa;text-decoration:line-through;font-size:14px}
+.new{color:var(--purple);font-size:20px;font-weight:800}
+.product-btn{
+  display:block;
+  margin-top:16px;
+  text-align:center;
+  background:#24112c;
+  color:#fff;
+  border-radius:10px;
+  padding:11px 13px;
+  font-size:14px;
+  font-weight:700;
+  transition:.2s;
+}
+.product-btn:hover{background:var(--purple)}
+
+/* Love story */
+.love{background:var(--soft)}
+.story-grid{
+  margin-top:40px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+.story-card{
+  position:relative;
+  overflow:hidden;
+  border-radius:18px;
+  background:#eee;
+  aspect-ratio:4/4.6;
+}
+.story-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .45s;
+}
+.story-card:hover img{transform:scale(1.06)}
+.story-card:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(transparent 60%,rgba(0,0,0,.20));
+  pointer-events:none;
+}
+
+/* Songs */
+.song-wrap{margin-top:42px;position:relative}
+.song-track{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:18px;
+}
+.song-card{
+  min-width:0;
+  padding:12px;
+  border:1px solid var(--line);
+  background:#fff;
+  border-radius:18px;
+  box-shadow:0 8px 24px rgba(45,17,57,.06);
+}
+.song-card img{
+  width:100%;
+  aspect-ratio:1;
+  object-fit:cover;
+  border-radius:13px;
+}
+.song-card h3{
+  font-size:16px;
+  margin:13px 4px 9px;
+}
+.song-card audio{
+  width:100%;
+  height:34px;
+}
+.song-note{
+  margin-top:15px;
+  text-align:center;
+  font-size:12px;
+  color:#9b939f;
+}
+
+/* About */
+.about{
+  background:#fff;
+}
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:65px;
+}
+.about-image{
+  border-radius:25px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+.about-image img{width:100%}
+.about-copy .section-tag{text-align:left}
+.about-copy h2{
+  font-family:"Playfair Display",Georgia,serif;
+  font-size:42px;
+  line-height:1.15;
+  margin-bottom:20px;
+}
+.about-copy h3{
+  font-family:"Playfair Display",Georgia,serif;
+  font-size:25px;
+  margin:26px 0 10px;
+}
+.about-copy p{
+  color:var(--muted);
+  line-height:1.85;
+}
+.more-btn{
+  display:inline-flex;
+  margin-top:24px;
+  background:linear-gradient(135deg,var(--purple),var(--pink));
+  color:#fff;
+  padding:13px 24px;
+  border-radius:999px;
+  font-weight:700;
+}
+
+/* QR */
+.qr{
+  background:linear-gradient(135deg,#f8efff,#fff);
+}
+.qr-grid{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  align-items:center;
+  gap:70px;
+}
+.qr-image{text-align:center}
+.qr-image img{
+  width:min(520px,100%);
+  margin:auto;
+}
+.qr-copy .section-tag{text-align:left}
+.qr-copy h2{
+  font-family:"Playfair Display",Georgia,serif;
+  font-size:42px;
+  margin-bottom:10px;
+}
+.qr-copy h3{font-size:23px;margin-bottom:12px}
+.qr-copy p{color:var(--muted);line-height:1.8;max-width:520px}
+
+/* Testimonials */
+.testimonials{background:#fff}
+.testimonial-grid{
+  margin-top:42px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+.testimonial{
+  border:1px solid var(--line);
+  border-radius:19px;
+  padding:25px;
+  box-shadow:0 8px 25px rgba(44,15,55,.05);
+  background:#fff;
+}
+.client-head{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+.client-head img{
+  width:58px;height:58px;border-radius:50%;object-fit:cover;
+}
+.client-head h3{font-size:16px}
+.stars{color:#f5ad00;letter-spacing:2px;margin-top:4px}
+.score{font-size:12px;color:#89818b;margin-top:2px}
+.testimonial p{
+  margin-top:17px;
+  color:#655e68;
+  line-height:1.75;
+  font-size:14px;
+}
+
+/* FAQ */
+.faq-section{background:var(--soft)}
+.faq{
+  max-width:900px;
+  margin:40px auto 0;
+}
+.faq-item{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:13px;
+  margin-bottom:12px;
+  overflow:hidden;
+}
+.faq-q{
+  width:100%;
+  border:0;
+  background:#fff;
+  padding:20px 22px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  text-align:left;
+  font-weight:700;
+  color:#251d29;
+  cursor:pointer;
+}
+.faq-q span{
+  width:28px;height:28px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:#f3e2fb;
+  color:var(--purple);
+  font-size:20px;
+  flex:0 0 auto;
+}
+.faq-a{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .3s ease;
+}
+.faq-a p{
+  color:var(--muted);
+  line-height:1.75;
+  padding:0 22px 20px;
+}
+
+/* Footer */
+.footer{
+  background:#19121d;
+  color:#fff;
+  padding:60px 0 25px;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr 1.25fr;
+  gap:60px;
+}
+.footer h3{font-size:17px;margin-bottom:20px}
+.footer ul{list-style:none}
+.footer li{margin-bottom:12px}
+.footer li,.footer p{color:#cfc7d2;font-size:14px;line-height:1.8}
+.footer a:hover{color:#d86fff}
+.footer-bottom{
+  margin-top:42px;
+  padding-top:20px;
+  border-top:1px solid #3a303e;
+  text-align:center;
+  color:#938995;
+  font-size:13px;
+}
+
+/* Floating action */
+.whatsapp{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  width:56px;height:56px;
+  border-radius:50%;
+  background:#25d366;
+  color:#fff;
+  display:grid;
+  place-items:center;
+  z-index:900;
+  font-size:27px;
+  box-shadow:0 8px 25px rgba(0,0,0,.2);
+}
+
+/* Lightbox */
+.lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(15,8,18,.9);
+  display:none;
+  place-items:center;
+  z-index:2000;
+  padding:25px;
+}
+.lightbox.open{display:grid}
+.lightbox img{
+  max-width:min(900px,95vw);
+  max-height:90vh;
+  object-fit:contain;
+  border-radius:12px;
+}
+.lightbox-close{
+  position:absolute;
+  top:18px;
+  right:24px;
+  border:0;
+  background:none;
+  color:#fff;
+  font-size:40px;
+  cursor:pointer;
+}
+
+/* Responsive */
+@media(max-width:1100px){
+  .nav-list{gap:19px}
+  .product-grid{grid-template-columns:repeat(3,1fr)}
+  .song-track{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:800px){
+  .container{width:min(100% - 28px,var(--container))}
+  .section{padding:62px 0}
+  .section-title{font-size:33px}
+  .brand img{width:170px}
+  .menu{display:block}
+  .nav{min-height:70px}
+  .nav-list{
+    display:none;
+    position:absolute;
+    top:70px;
+    left:0;
+    right:0;
+    background:#fff;
+    flex-direction:column;
+    align-items:stretch;
+    gap:0;
+    padding:8px 18px 20px;
+    border-bottom:1px solid var(--line);
+    box-shadow:0 15px 25px rgba(0,0,0,.08);
+  }
+  .nav-list.open{display:flex}
+  .nav-list li{border-bottom:1px solid #f0e9f2}
+  .nav-list li:last-child{border:0}
+  .nav-list a{display:block;padding:14px 4px}
+  .nav-cta{text-align:center!important;margin-top:8px}
+  .hero img{min-height:0}
+  .product-grid{grid-template-columns:repeat(2,1fr);gap:14px}
+  .product-visual{height:165px}
+  .story-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .song-track{
+    display:flex;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    scrollbar-width:none;
+    padding-bottom:6px;
+  }
+  .song-track::-webkit-scrollbar{display:none}
+  .song-card{
+    flex:0 0 70%;
+    scroll-snap-align:start;
+  }
+  .about-grid,.qr-grid{grid-template-columns:1fr;gap:35px}
+  .about-copy .section-tag,.qr-copy .section-tag{text-align:center}
+  .about-copy h2,.qr-copy h2{text-align:center;font-size:34px}
+  .qr-copy{text-align:center}
+  .qr-copy p{margin:auto}
+  .testimonial-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr;gap:30px}
+}
+@media(max-width:430px){
+  .section{padding:52px 0}
+  .section-title{font-size:29px}
+  .section-copy{font-size:14px}
+  .product-grid{grid-template-columns:1fr}
+  .product-visual{height:190px}
+  .story-grid{grid-template-columns:1fr 1fr}
+  .story-card{border-radius:13px}
+  .song-card{flex-basis:82%}
+  .about-copy h2,.qr-copy h2{font-size:30px}
+  .qr-copy h3{font-size:20px}
+  .whatsapp{width:50px;height:50px;right:14px;bottom:14px}
+}
+</style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="#home" aria-label="A Custom Song home">
+      <img src="https://acustomsong.com/static/v2static/images/images/logo.webp" alt="A Custom Song">
+    </a>
+
+    <button class="menu" id="menuBtn" aria-label="Open navigation" aria-expanded="false">☰</button>
+
+    <ul class="nav-list" id="navList">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a class="nav-cta" href="#products">Start</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="home">
+
+  <!-- Reference hero artwork -->
+  <section class="hero">
+    <img
+      src="https://acustomsong.com/static/assets/images/about_img.jpg"
+      alt="Get your custom song"
+    >
+  </section>
+
+  <!-- Products -->
+  <section class="section products" id="products">
+    <div class="container">
+      <div class="section-tag">Products</div>
+      <h1 class="section-title">Our Recent Products</h1>
+
+      <div class="product-grid">
+
+        <article class="product-card">
+          <div class="product-visual v1"><div class="visual-icon">🎤</div></div>
+          <div class="product-body">
+            <h3>AI Lipsync</h3>
+            <div class="price"><span class="old">₹800</span><span class="new">₹500</span></div>
+            <a class="product-btn" href="https://acustomsong.com/lipsync" target="_blank">Buy Now</a>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-visual v2"><div class="visual-icon">💜</div></div>
+          <div class="product-body">
+            <h3>Heaven Video</h3>
+            <div class="price"><span class="old">₹5000.00</span><span class="new">₹3000.00</span></div>
+            <a class="product-btn" href="https://acustomsong.com/heaven-product" target="_blank">Buy Now</a>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-visual v3"><div class="visual-icon">🖼️</div></div>
+          <div class="product-body">
+            <h3>AR Frame</h3>
+            <div class="price"><span class="old">₹499.00</span><span class="new">₹299.00</span></div>
+            <a class="product-btn" href="https://acustomsong.com/ar-frame" target="_blank">Buy Now</a>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-visual v4"><div class="visual-icon">🎬</div></div>
+          <div class="product-body">
+            <h3>Animation Video</h3>
+            <div class="price"><span class="old">₹3800.00</span><span class="new">₹3000.00</span></div>
+            <a class="product-btn" href="https://acustomsong.com/animation-video" target="_blank">Buy Now</a>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-visual v5"><div class="visual-icon">📹</div></div>
+          <div class="product-body">
+            <h3>Before After Photo to AI Video</h3>
+            <div class="price"><span class="old">₹1800</span><span class="new">₹1200</span></div>
+            <a class="product-btn" href="https://acustomsong.com/photo-to-video" target="_blank">Buy Now</a>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-visual v6"><div class="visual-icon">✨</div></div>
+          <div class="product-body">
+            <h3>Before After AI PhotoShoot</h3>
+            <div class="price"><span class="old">₹1000.00</span><span class="new">₹500.00</span></div>
+            <a class="product-btn" href="https://acustomsong.com/ai-photoshoot" target="_blank">Buy Now</a>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-visual v7"><div class="visual-icon">🎵</div></div>
+          <div class="product-body">
+            <h3>Get a Song</h3>
+            <div class="price"><span class="old">₹1000.00</span><span class="new">₹500.00</span></div>
+            <a class="product-btn" href="https://acustomsong.com/songs" target="_blank">Buy Now</a>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-visual v8"><div class="visual-icon">🎨</div></div>
+          <div class="product-body">
+            <h3>Before After Digital Art</h3>
+            <div class="price"><span class="old">₹1500.00</span><span class="new">₹1000.00</span></div>
+            <a class="product-btn" href="https://acustomsong.com/digital_art" target="_blank">Buy Now</a>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-visual v9"><div class="visual-icon">💞</div></div>
+          <div class="product-body">
+            <h3>Before After Digital Merge</h3>
+            <div class="price"><span class="old">₹1500.00</span><span class="new">₹1000.00</span></div>
+            <a class="product-btn" href="https://acustomsong.com/digital_merge_painting" target="_blank">Buy Now</a>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-visual v10"><div class="visual-icon">💌</div></div>
+          <div class="product-body">
+            <h3>E-Invitation</h3>
+            <div class="price"><span class="old">₹500.00</span><span class="new">₹250.00</span></div>
+            <a class="product-btn" href="https://acustomsong.com/e_invitation" target="_blank">Buy Now</a>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-visual v11"><div class="visual-icon">🖼️</div></div>
+          <div class="product-body">
+            <h3>Image Frame Acrylic Frame</h3>
+            <div class="price"><span class="old">₹800</span><span class="new">₹549</span></div>
+            <a class="product-btn" href="https://acustomsong.com/acrylic_frame" target="_blank">Buy Now</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Love Story -->
+  <section class="section love" id="gallery">
+    <div class="container">
+      <h2 class="section-title">Our Love Story</h2>
+      <p class="section-copy">
+        Every moment with you is a beautiful memory. These special moments captured our journey together,
+        filled with love, laughter, and endless happiness.
+      </p>
+
+      <div class="story-grid">
+        <button class="story-card" data-image="https://acustomsong.com/static/assets/images/cardimg1.png"><img src="https://acustomsong.com/static/assets/images/cardimg1.png" alt="Our Love Story 1"></button>
+        <button class="story-card" data-image="https://acustomsong.com/static/assets/images/cardimg2.png"><img src="https://acustomsong.com/static/assets/images/cardimg2.png" alt="Our Love Story 2"></button>
+        <button class="story-card" data-image="https://acustomsong.com/static/assets/images/cardimg3.jpg"><img src="https://acustomsong.com/static/assets/images/cardimg3.jpg" alt="Our Love Story 3"></button>
+        <button class="story-card" data-image="https://acustomsong.com/static/assets/images/cardimg4.jpg"><img src="https://acustomsong.com/static/assets/images/cardimg4.jpg" alt="Our Love Story 4"></button>
+        <button class="story-card" data-image="https://acustomsong.com/static/assets/images/cardimg5.png"><img src="https://acustomsong.com/static/assets/images/cardimg5.png" alt="Our Love Story 5"></button>
+        <button class="story-card" data-image="https://acustomsong.com/static/assets/images/cardimg6.jpg"><img src="https://acustomsong.com/static/assets/images/cardimg6.jpg" alt="Our Love Story 6"></button>
+        <button class="story-card" data-image="https://acustomsong.com/static/assets/images/cardimg7.png"><img src="https://acustomsong.com/static/assets/images/cardimg7.png" alt="Our Love Story 7"></button>
+        <button class="story-card" data-image="https://acustomsong.com/static/assets/images/cardimg8.jpg"><img src="https://acustomsong.com/static/assets/images/cardimg8.jpg" alt="Our Love Story 8"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recent Songs -->
+  <section class="section songs">
+    <div class="container">
+      <div class="section-tag">Recent Songs</div>
+      <h2 class="section-title">Hear the Magic of Our Gifts</h2>
+
+      <div class="song-wrap">
+        <div class="song-track">
+
+          <article class="song-card">
+            <img src="https://acustomsong.com/static/assets/images/Tamil.webp" alt="Tamil song cover">
+            <h3>Tamil</h3>
+            <audio controls preload="none" aria-label="Tamil sample song"></audio>
+          </article>
+
+          <article class="song-card">
+            <img src="https://acustomsong.com/static/assets/images/English.webp" alt="English song cover">
+            <h3>English</h3>
+            <audio controls preload="none" aria-label="English sample song"></audio>
+          </article>
+
+          <article class="song-card">
+            <img src="https://acustomsong.com/static/assets/images/Hindi.webp" alt="Hindi song cover">
+            <h3>Hindi</h3>
+            <audio controls preload="none" aria-label="Hindi sample song"></audio>
+          </article>
+
+          <article class="song-card">
+            <img src="https://acustomsong.com/static/assets/images/Telugu.webp" alt="Telugu song cover">
+            <h3>Telugu</h3>
+            <audio controls preload="none" aria-label="Telugu sample song"></audio>
+          </article>
+
+          <article class="song-card">
+            <img src="https://acustomsong.com/static/assets/images/Malayalam.webp" alt="Kannada song cover">
+            <h3>Kannada</h3>
+            <audio controls preload="none" aria-label="Kannada sample song"></audio>
+          </article>
+
+        </div>
+        <p class="song-note">Sample audio controls are included to reproduce the reference UI; the source page does not expose the audio files in its public page content.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section about" id="about">
+    <div class="container about-grid">
+
+      <div class="about-image">
+        <img src="https://acustomsong.com/static/assets/images/about_img.jpg" alt="Customized Musical Experiences">
+      </div>
+
+      <div class="about-copy">
+        <div class="section-tag">About</div>
+        <h2>Customized Musical Experiences.</h2>
+        <p>
+          A custom songs, we specialize in creating fully customized songs based on your unique story.
+          Using AI technology, we turn your memories, messages, and emotions into personalized music
+          that's perfect for any occasion. Our mission is to help you share your story in the most
+          creative and heartfelt way—through a song made just for you.
+        </p>
+
+        <h3>Personalized with a Touch of Heart</h3>
+        <p>
+          Our team of expert songwriters, musicians, and vocalists work closely with you to create a
+          unique gift that perfectly captures your emotions and memories. From the lyrics to the melody,
+          every detail is carefully crafted to ensure the song is as special as the occasion it celebrates.
+          Whether you’re looking for a personalized gift for a loved one or a custom song for a milestone
+          event, we are here to turn your ideas into beautiful music.
+        </p>
+
+        <a class="more-btn" href="https://acustomsong.com/songs" target="_blank">Learn More</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- QR -->
+  <section class="section qr">
+    <div class="container qr-grid">
+
+      <div class="qr-image">
+        <img src="https://acustomsong.com/static/v2static/images/images/qrimg.png" alt="Scan to play QR codes">
+      </div>
+
+      <div class="qr-copy">
+        <div class="section-tag">Scan</div>
+        <h2>Scan to Play!</h2>
+        <h3>Scan the Code, Preview the Vibe</h3>
+        <p>
+          Scan a QR code to instantly preview sample songs from A custom Songs
+          and get inspired to create your own.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Client Feedback -->
+  <section class="section testimonials">
+    <div class="container">
+      <div class="section-tag">Client Feedback</div>
+      <h2 class="section-title">Our Client Feedback</h2>
+
+      <div class="testimonial-grid">
+
+        <article class="testimonial">
+          <div class="client-head">
+            <img src="https://acustomsong.com/static/assets/images/testimonial/review.webp" alt="Rahul M">
+            <div>
+              <h3>Rahul M</h3>
+              <div class="stars">★★★★★</div>
+              <div class="score">5.0</div>
+            </div>
+          </div>
+          <p>Acrylic frame looks very premium and neat. Quality is really good. Perfect gift for memories ❤️</p>
+        </article>
+
+        <article class="testimonial">
+          <div class="client-head">
+            <img src="https://acustomsong.com/static/assets/images/testimonial/review.webp" alt="Sneha R">
+            <div>
+              <h3>Sneha R</h3>
+              <div class="stars">★★★★★</div>
+              <div class="score">5.0</div>
+            </div>
+          </div>
+          <p>All our photos were turned into a lovely video. Music and editing were perfect. Everyone in my family loved it 🥹</p>
+        </article>
+
+        <article class="testimonial">
+          <div class="client-head">
+            <img src="https://acustomsong.com/static/assets/images/testimonial/review.webp" alt="Vignesh K">
+            <div>
+              <h3>Vignesh K</h3>
+              <div class="stars">★★★★★</div>
+              <div class="score">5.0</div>
+            </div>
+          </div>
+          <p>Lipsync output is really awesome and very emotional 😍 It feels like an original video. Super work team!</p>
+        </article>
+
+        <article class="testimonial">
+          <div class="client-head">
+            <img src="https://acustomsong.com/static/assets/images/testimonial/review.webp" alt="Divya S">
+            <div>
+              <h3>Divya S</h3>
+              <div class="stars">★★★★★</div>
+              <div class="score">5.0</div>
+            </div>
+          </div>
+          <p>The animation is very cute and creative. My Husband enjoyed it a lot ❤️ Worth the money.</p>
+        </article>
+
+        <article class="testimonial">
+          <div class="client-head">
+            <img src="https://acustomsong.com/static/assets/images/testimonial/review.webp" alt="Arun P">
+            <div>
+              <h3>Arun P</h3>
+              <div class="stars">★★★★★</div>
+              <div class="score">5.0</div>
+            </div>
+          </div>
+          <p>The digital art came out very beautiful. Details are perfect. It’s a unique and special gift.</p>
+        </article>
+
+        <article class="testimonial">
+          <div class="client-head">
+            <img src="https://acustomsong.com/static/assets/images/testimonial/review.webp" alt="Sandra Blake">
+            <div>
+              <h3>Sandra Blake</h3>
+              <div class="stars">★★★★★</div>
+              <div class="score">5.0</div>
+            </div>
+          </div>
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section faq-section">
+    <div class="container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+
+      <div class="faq">
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">What makes your gifts unique?<span>+</span></button>
+          <div class="faq-a"><p>We use AI to create personalized, emotion-filled gifts that stand out.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">Can I add my own inputs?<span>+</span></button>
+          <div class="faq-a"><p>Yes! Share names, messages, or photos — we’ll customize it for you.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">How fast is delivery?<span>+</span></button>
+          <div class="faq-a"><p>Digital gifts are sent instantly. Physical items ship quickly too.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">Are your gifts suitable for any occasion?<span>+</span></button>
+          <div class="faq-a"><p>Definitely! Perfect for birthdays, anniversaries, farewells, and more.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">Do you offer post-order support?<span>+</span></button>
+          <div class="faq-a"><p>Yes, we’re available to help before and after your purchase.</p></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="footer" id="contact">
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div>
+        <h3>Services</h3>
+        <ul>
+          <li><a href="https://acustomsong.com/privacy-policy" target="_blank">Privacy Policy</a></li>
+          <li><a href="https://acustomsong.com/refund-policy" target="_blank">Refund Policy</a></li>
+          <li><a href="https://acustomsong.com/terms" target="_blank">Terms And Service</a></li>
+          <li><a href="#">Data Delection</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Info</h3>
+        <p>6 Dhanammal Street, Chetpet, Chennai 600031</p>
+        <p>9169695959</p>
+        <p>support@acustomsong.com</p>
+      </div>
+
+      <div>
+        <h3>About the company</h3>
+        <p>
+          M7 Corporation tech team has developed the A Custom Song page,
+          an innovative project aimed at making a meaningful impact in the community.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">Copyright © M7 Corporation 2026</div>
+  </div>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/919169695959" target="_blank" aria-label="WhatsApp">☎</a>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close image">&times;</button>
+  <img id="lightboxImg" src="" alt="Gallery preview">
+</div>
+
+<script>
+(function(){
+  const menuBtn = document.getElementById("menuBtn");
+  const navList = document.getElementById("navList");
+
+  menuBtn.addEventListener("click", function(){
+    const open = navList.classList.toggle("open");
+    menuBtn.setAttribute("aria-expanded", String(open));
+    menuBtn.textContent = open ? "✕" : "☰";
+  });
+
+  document.querySelectorAll(".nav-list a").forEach(function(link){
+    link.addEventListener("click", function(){
+      navList.classList.remove("open");
+      menuBtn.setAttribute("aria-expanded", "false");
+      menuBtn.textContent = "☰";
+    });
+  });
+
+  document.querySelectorAll(".faq-q").forEach(function(button){
+    button.addEventListener("click", function(){
+      const answer = button.nextElementSibling;
+      const icon = button.querySelector("span");
+      const isOpen = answer.style.maxHeight;
+
+      document.querySelectorAll(".faq-a").forEach(function(item){
+        item.style.maxHeight = null;
+      });
+
+      document.querySelectorAll(".faq-q span").forEach(function(item){
+        item.textContent = "+";
+      });
+
+      if(!isOpen){
+        answer.style.maxHeight = answer.scrollHeight + "px";
+        icon.textContent = "−";
+      }
+    });
+  });
+
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightboxImg");
+  const lightboxClose = document.getElementById("lightboxClose");
+
+  document.querySelectorAll(".story-card").forEach(function(card){
+    card.addEventListener("click", function(){
+      lightboxImg.src = card.dataset.image;
+      lightbox.classList.add("open");
+      lightbox.setAttribute("aria-hidden", "false");
+    });
+  });
+
+  function closeLightbox(){
+    lightbox.classList.remove("open");
+    lightbox.setAttribute("aria-hidden", "true");
+    lightboxImg.src = "";
+  }
+
+  lightboxClose.addEventListener("click", closeLightbox);
+
+  lightbox.addEventListener("click", function(e){
+    if(e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape"){
+      closeLightbox();
+      navList.classList.remove("open");
+      menuBtn.setAttribute("aria-expanded", "false");
+      menuBtn.textContent = "☰";
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
